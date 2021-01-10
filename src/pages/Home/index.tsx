@@ -3,8 +3,8 @@ import { TJSXElement } from '../../types'
 import useFetch from '../../hooks/useFetch'
 
 const Home = (): TJSXElement => {
-    const url = 'pokemon'
-    const { isLoading, data } = useFetch(url)
+    const { isLoading, data } = useFetch('pokemon')
+    console.log(data)
     return (
         <div>
             <h1>Home</h1>

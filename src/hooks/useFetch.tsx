@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react'
 
-const useFetch = (
-    resource: string,
-): any => {
-    const API_URL = 'https://pokeapi.co/api/v2'
+const useFetch = (resource: string): any => {
     const [data, setData] = useState([])
     const [errorMessage, setErrorMessage] = useState('')
     const [hasError, setHasError] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const [url, updateUrl] = useState(`https://pokeapi.co/api/v2/${resource}`)
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true)
             try {
-                const response = await fetch(`${API_URL}/${resource}`)
+                const response = await fetch(url)
                 const result = await response.json()
                 if (response.ok) {
                     setData(result)
@@ -28,9 +26,8 @@ const useFetch = (
             }
         }
         fetchData()
-    }, [])
-
-    return { data, isLoading, hasError, errorMessage }
+    }, [url])
+    return { data, isLoading, hasError, errorMessage, updateUrl }
 }
 
 export default useFetch
