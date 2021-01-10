@@ -1,6 +1,6 @@
-import { TJSXElement } from "../../types";
+import { TElement } from "../../types";
 
-const Loader = (): TJSXElement => {
+const Loader = (): TElement => {
     return (
         <div>
             Loader

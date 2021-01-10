@@ -3,13 +3,13 @@ import { Suspense, lazy } from "react";
 
 import Layout from './layout'
 import Loader from "./components/Loader";
-import { TJSXElement } from "./types";
+import { TElement } from "./types";
 
 const Home = lazy(() => import("./pages/Home"));
 const Details = lazy(() => import("./pages/Details"));
 const Error404 = lazy(() => import("./pages/Error404"));
 
-const App = (): TJSXElement => {
+const App = (): TElement => {
   return (
     <Suspense fallback={<Loader />}>
       <BrowserRouter>

@@ -1,15 +1,17 @@
+import { TElement, TPokemonList } from '../../types'
+
 import ListOfPokemon from '../../components/ListOfPokemon'
-import { TJSXElement } from '../../types'
 import useFetch from '../../hooks/useFetch'
 
-const Home = (): TJSXElement => {
-    const { isLoading, data } = useFetch('pokemon')
-    console.log(data)
+const Home = (): TElement => {
+    const { isLoading, data } = useFetch('pokemon/')
+    const results: TPokemonList = data.results || []
     return (
         <div>
-            <h1>Home</h1>
             {
-                isLoading ? 'Loading...' : <ListOfPokemon list={data.results} />
+                isLoading
+                    ? 'Loading...'
+                    : <ListOfPokemon results={results} />
             }
         </div>
     );

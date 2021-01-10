@@ -1,6 +1,6 @@
-import { TJSXElement, TPokemon } from "../../types";
+import { TElement, TPokemon } from "../../types";
 
-const Card = ({ name, url }: TPokemon): TJSXElement => {
+const Card = ({ name, url }: TPokemon): TElement => {
     return (
         <div>
             <h2>{name}</h2>

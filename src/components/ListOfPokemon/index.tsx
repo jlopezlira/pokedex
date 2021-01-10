@@ -1,12 +1,19 @@
-import { TJSXElement, TPokemonList } from "../../types";
+import { TElement, TEmpty, TPokemon, TPokemonList } from "../../types";
 
 import Card from '../Card'
 
-const ListOfPokemon = ({ list }: TPokemonList): TJSXElement => {
+const ListOfPokemon = ({ results }: TPokemonList | TEmpty): TElement => {
     return (
         <>
             {
-                list.map((pokemon, index) => <Card name={pokemon.name} url={pokemon.url} key={pokemon.name + index} />)
+                results.map(
+                    (pokemon: TPokemon, index: number) =>
+                        <Card
+                            name={pokemon.name}
+                            url={pokemon.url}
+                            key={pokemon.name + index}
+                        />
+                )
             }
         </>
     )

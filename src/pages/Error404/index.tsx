@@ -1,6 +1,6 @@
-import { TJSXElement } from '../../types'
+import { TElement } from '../../types'
 
-const Error404 = (): TJSXElement => {
+const Error404 = (): TElement => {
     return (
         <div>
             <h1>Error 404</h1>

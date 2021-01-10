@@ -1,8 +1,8 @@
-import { TJSXElement, TReactChildren } from '../types'
+import { TElement, TReactChildren } from '../types'
 
 import { Link } from 'react-router-dom'
 
-const Layout = ({ children }: TReactChildren): TJSXElement => {
+const Layout = ({ children }: TReactChildren): TElement => {
     return (
         <div>
             <nav>

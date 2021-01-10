@@ -1,19 +1,19 @@
 
 export type TReactChildren = {
-    children: React.ReactNode | React.ReactNode
+  children: React.ReactNode | React.ReactNode
 }
 
 export type TPokemonID = {
-    id?: string | number
+  id?: string | number
 }
 
 export type TPokemon = {
-    name: string,
-    url: string
+  name: string,
+  url: string
 }
 
-export type TPokemonList = {
-    list: Array<TPokemon>
-}
+export type TPokemonList = TPokemon[]
 
-export type TJSXElement = JSX.Element
+export type TElement = JSX.Element
+
+export type TEmpty = any

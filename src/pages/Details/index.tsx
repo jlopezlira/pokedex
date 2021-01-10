@@ -1,8 +1,8 @@
-import { TJSXElement, TPokemonID } from '../../types'
+import { TElement, TPokemonID } from '../../types'
 
 import { useParams } from 'react-router-dom';
 
-const Profile = (): TJSXElement => {
+const Profile = (): TElement => {
     const { id }: TPokemonID = useParams()
 
     return (
