@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Suspense, lazy } from "react";
 
-function App() {
+import Layout from './layout'
+import Loader from "./components/Loader";
+import { TJSXElement } from "./types";
+
+const Home = lazy(() => import("./pages/Home"));
+const Details = lazy(() => import("./pages/Details"));
+const Error404 = lazy(() => import("./pages/Error404"));
+
+const App = (): TJSXElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loader />}>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={Home}
+            />
+            <Route
+              exact
+              path="/details/:id"
+              component={Details}
+            />
+            <Route
+              exact
+              path="*"
+              component={Error404}
+            />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
