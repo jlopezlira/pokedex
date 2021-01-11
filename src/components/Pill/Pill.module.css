@@ -1,0 +1,28 @@
+.pill {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: auto;
+   font-size: 0.8em;
+   font-weight: 600;
+   padding: 0.7em 1em;
+   margin-bottom: 1em;
+   border-radius: 25px;
+   box-shadow: 5px 5px 18px var(--color-gray), -5px -5px 18px var(--color-light);
+   text-transform: capitalize;
+}
+
+.dark {
+   color: var(--color-white);
+   background: var(--color-black);
+}
+
+.pill > strong {
+   margin-left: 5px;
+   font-size: 1.2em;
+}
+
+.light {
+   color: var(--color-black);
+   background: var(--color-white);
+}

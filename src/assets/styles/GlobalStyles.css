@@ -4,7 +4,7 @@
    --color-gray: #c5c5c5;
    --color-gray-dark: #adadad;
    --color-gray-indent: #ffffff73;
-   --color-black: #292929;
+   --color-black: #3d3d3d;
    --color-yellow: #ffcb05;
    --color-blue: #2f6db4;
    --color-blue-indent: #c2c2c5;
@@ -28,15 +28,21 @@
    padding: 0;
    box-sizing: border-box;
    font-family: 'Roboto', sans-serif;
+   color: var(--color-black);
 }
 
 html,
 body {
-   height: 100%;
+   height: 100vh;
 }
 
 body {
    background: var(--color-white);
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+   text-decoration: none;
+   transition: all 350ms ease-in-out;
 }

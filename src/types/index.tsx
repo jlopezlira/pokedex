@@ -1,5 +1,6 @@
 export type TReactChildren = {
    children: React.ReactNode | React.ReactNode
+   dark?: boolean
 }
 
 export type TPokemonID = {

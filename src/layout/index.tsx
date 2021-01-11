@@ -1,14 +1,13 @@
 import { TElement, TReactChildren } from '../types'
 
-import Footer from '../components/Footer'
 import Header from '../components/Header'
+import styles from './Layout.module.css'
 
 const Layout = ({ children }: TReactChildren): TElement => {
    return (
       <div>
          <Header />
-         <div>{children}</div>
-         <Footer />
+         <div className={styles.container}>{children}</div>
       </div>
    )
 }
