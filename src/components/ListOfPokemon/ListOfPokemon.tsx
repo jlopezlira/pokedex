@@ -4,7 +4,7 @@ import Card from '../Card'
 import useFetch from '../../hooks/useFetch'
 
 const ListOfPokemon = (): TElement => {
-   const { isLoading, data } = useFetch('pokemon/')
+   const { isLoading, data } = useFetch('https://pokeapi.co/api/v2/pokemon/')
    const results: TPokemonList = data.results || []
 
    return (

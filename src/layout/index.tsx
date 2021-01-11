@@ -1,15 +1,14 @@
 import { TElement, TReactChildren } from '../types'
 
-import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 const Layout = ({ children }: TReactChildren): TElement => {
    return (
       <div>
-         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/details">Details</Link>
-         </nav>
-         {children}
+         <Header />
+         <div>{children}</div>
+         <Footer />
       </div>
    )
 }

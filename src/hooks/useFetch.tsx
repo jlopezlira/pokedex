@@ -5,7 +5,8 @@ const useFetch = (resource: string): any => {
    const [errorMessage, setErrorMessage] = useState('')
    const [hasError, setHasError] = useState(false)
    const [isLoading, setIsLoading] = useState(false)
-   const [url, updateUrl] = useState(`https://pokeapi.co/api/v2/${resource}`)
+   const [url, updateUrl] = useState(resource)
+
    useEffect(() => {
       const fetchData = async () => {
          setIsLoading(true)

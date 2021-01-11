@@ -1,17 +1,42 @@
+:root {
+   --color-light: #fff;
+   --color-white: #e8e8e8;
+   --color-gray: #c5c5c5;
+   --color-gray-dark: #adadad;
+   --color-gray-indent: #ffffff73;
+   --color-black: #292929;
+   --color-yellow: #ffcb05;
+   --color-blue: #2f6db4;
+   --color-blue-indent: #c2c2c5;
+   --color-blue-dark: #1c2d60;
+}
+
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Regular.eot');
-    src: url('../fonts/roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
-        url('../fonts/roboto/Roboto-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+   font-family: 'Roboto';
+   src: url('../fonts/roboto/Roboto-Regular.eot');
+   src: url('../fonts/roboto/Roboto-Regular.eot?#iefix')
+         format('embedded-opentype'),
+      url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+      url('../fonts/roboto/Roboto-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+   height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+   background: var(--color-white);
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
