@@ -23,7 +23,6 @@ const Card = ({ name, url }: TPokemon): TElement => {
    useEffect(() => {
       handleSetData()
    }, [data])
-   console.log(frontDefaultImage)
    return (
       <div className={styles.card}>
          {isLoading ? (

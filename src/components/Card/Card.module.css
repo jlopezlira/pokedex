@@ -3,14 +3,14 @@
    width: 100%;
    border-radius: 25px;
    background: var(--color-white);
-   box-shadow: 9px 9px 18px var(--color-gray), -9px -9px 18px var(--color-light);
+   box-shadow: 14px 14px 23px var(--color-gray-indent),
+      -14px -14px 23px var(--color-light);
    padding: 1.5em;
    transition: all 350ms ease-in-out;
 }
 
 .card:hover {
-   box-shadow: 14px 14px 23px var(--color-gray-indent),
-      -14px -14px 23px var(--color-light);
+   box-shadow: 9px 9px 18px var(--color-gray), -9px -9px 18px var(--color-light);
 }
 
 .container {
