@@ -16,7 +16,7 @@ const App = (): TElement => {
             <Layout>
                <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route exact path="/pokemon/:id" component={Details} />
+                  <Route exact path="/pokemon/:pokedex" component={Details} />
                   <Route exact path="*" component={Error404} />
                </Switch>
             </Layout>

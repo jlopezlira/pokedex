@@ -36,8 +36,7 @@
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: 50%;
-   background: var(--color-white) url('../../assets/static/skeleton.gif')
-      no-repeat center center;
+   background: var(--color-white);
 }
 
 @-moz-keyframes spin {

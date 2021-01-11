@@ -3,13 +3,34 @@ export type TReactChildren = {
    dark?: boolean
 }
 
-export type TPokemonID = {
-   id?: string | number
+export type TPokedex = {
+   pokedex?: string | number
+}
+
+export type TAbility = {
+   name?: string
+   url?: string
+}
+
+export type TType = {
+   name?: string
+   url?: string
+}
+
+export type TImage = {
+   url?: string
 }
 
 export type TPokemon = {
+   id?: number
    name: string
-   url: string
+   url?: string
+   abilities?: TAbility[]
+   experience?: number
+   weight?: number
+   height?: number
+   images?: TImage[]
+   types?: TType[]
 }
 
 export type TLabel = {
