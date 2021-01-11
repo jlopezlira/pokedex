@@ -1,6 +1,7 @@
 import { TElement, TPokemon, TPokemonList } from '../../types'
 
 import Card from '../Card'
+import Loader from '../Loader'
 import useFetch from '../../hooks/useFetch'
 
 const ListOfPokemon = (): TElement => {
@@ -9,15 +10,17 @@ const ListOfPokemon = (): TElement => {
 
    return (
       <>
-         {isLoading
-            ? 'Loading...'
-            : results.map((pokemon: TPokemon, index: number) => (
-                 <Card
-                    name={pokemon.name}
-                    url={pokemon.url}
-                    key={pokemon.name + index}
-                 />
-              ))}
+         {isLoading ? (
+            <Loader />
+         ) : (
+            results.map((pokemon: TPokemon, index: number) => (
+               <Card
+                  name={pokemon.name}
+                  url={pokemon.url}
+                  key={pokemon.name + index}
+               />
+            ))
+         )}
       </>
    )
 }
