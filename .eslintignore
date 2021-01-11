@@ -1,0 +1,3 @@
+/build/**
+!.eslintrc.js
+/src/reportWebVitals.ts

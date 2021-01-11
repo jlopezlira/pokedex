@@ -1,11 +1,7 @@
-import { TElement } from "../../types";
+import { TElement } from '../../types';
 
 const Loader = (): TElement => {
-    return (
-        <div>
-            Loader
-        </div>
-    );
-}
+	return <div>Loader</div>;
+};
 
 export default Loader;
