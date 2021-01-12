@@ -1,4 +1,4 @@
-import { TElement, TPokemon } from '../../types'
+import { TCard, TElement } from '../../types'
 import { useEffect, useState } from 'react'
 
 import Divider from '../Divider'
@@ -8,7 +8,7 @@ import skeleton from '../../assets/static/skeleton.gif'
 import styles from './Card.module.css'
 import useFetch from '../../hooks/useFetch'
 
-const Card = ({ name, url }: TPokemon): TElement => {
+const Card = ({ name, url }: TCard): TElement => {
    const resource: string = url || ''
    const { isLoading, data } = useFetch(resource)
    const [type, setType] = useState([])

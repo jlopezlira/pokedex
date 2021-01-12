@@ -1,4 +1,4 @@
-import { TElement, TPokemon, TPokemonList } from '../../types'
+import { TCard, TElement, TPokemonList } from '../../types'
 
 import Card from '../Card'
 import Loader from '../Loader'
@@ -13,7 +13,7 @@ const ListOfPokemon = (): TElement => {
          {isLoading ? (
             <Loader />
          ) : (
-            results.map((pokemon: TPokemon, index: number) => (
+            results.map((pokemon: TCard, index: number) => (
                <Card
                   name={pokemon.name}
                   url={pokemon.url}

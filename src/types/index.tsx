@@ -33,6 +33,12 @@ export type TPokemon = {
    types?: TType[] | undefined
 }
 
+export type TCard = {
+   id?: number
+   name: string
+   url?: string
+}
+
 export type TLabel = {
    label: string
 }
