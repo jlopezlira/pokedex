@@ -18,18 +18,6 @@
    margin: 0 1em 0 0;
 }
 
-@media (max-width: 479.98px) {
-   .header {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-areas: 'logo' 'search';
-   }
-   .logo {
-      margin: auto;
-      margin-bottom: 0.5em;
-   }
-}
-
 .fixed {
    position: fixed;
    display: grid;
@@ -46,4 +34,21 @@
    right: 0;
    top: 2em;
    z-index: 9999;
+}
+
+@media (max-width: 479.98px) {
+   .fixed {
+      width: 95% !important;
+      padding: 1em 5px;
+   }
+   .header {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: 'logo' 'search';
+   }
+
+   .logo {
+      margin: auto;
+      margin-bottom: 0.5em;
+   }
 }
