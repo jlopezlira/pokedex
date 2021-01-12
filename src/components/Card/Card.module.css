@@ -35,11 +35,3 @@
    padding: 0.5em;
    line-height: 1em;
 }
-
-.divider {
-   display: block;
-   margin: auto;
-   width: 90%;
-   border-top: 1px solid var(--color-gray);
-   border-bottom: 1px solid var(--color-light);
-}

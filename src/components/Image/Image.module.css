@@ -1,0 +1,17 @@
+.container {
+   display: block;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+}
+
+.image {
+   display: block;
+   width: 100%;
+   height: auto;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   object-fit: cover;
+}

@@ -26,3 +26,11 @@
    color: var(--color-black);
    background: var(--color-white);
 }
+
+a {
+   color: var(--color-yellow);
+}
+
+a:hover {
+   color: var(--color-orange);
+}

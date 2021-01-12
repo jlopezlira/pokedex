@@ -1,6 +1,7 @@
 import { TElement, TPokemon } from '../../types'
 import { useEffect, useState } from 'react'
 
+import Divider from '../Divider'
 import { Link } from 'react-router-dom'
 import Pill from '../Pill'
 import skeleton from '../../assets/static/skeleton.gif'
@@ -35,7 +36,7 @@ const Card = ({ name, url }: TPokemon): TElement => {
                <Pill>
                   Pokedex Number: <strong>#{pokedexNumber}</strong>
                </Pill>
-               <div className={styles.divider}></div>
+               <Divider />
                <h2 className={styles.title}>{name}</h2>
                <div>
                   {type.map(({ type }: any, index: number) => (

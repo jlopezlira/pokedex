@@ -25,12 +25,12 @@ export type TPokemon = {
    id?: number
    name: string
    url?: string
-   abilities?: TAbility[]
    experience?: number
    weight?: number
    height?: number
-   images?: TImage[]
-   types?: TType[]
+   abilities?: TAbility[] | boolean
+   images?: TImage[] | boolean
+   types?: TType[] | boolean
 }
 
 export type TLabel = {
