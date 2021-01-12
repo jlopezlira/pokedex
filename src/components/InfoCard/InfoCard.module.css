@@ -1,9 +1,0 @@
-.info {
-   display: block;
-   width: 100%;
-   border-radius: 25px;
-   background: var(--color-white);
-   box-shadow: 9px 9px 18px var(--color-gray), -9px -9px 18px var(--color-light);
-   padding: 1.5em;
-   transition: all 350ms ease-in-out;
-}

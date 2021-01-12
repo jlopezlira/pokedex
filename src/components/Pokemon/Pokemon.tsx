@@ -8,8 +8,7 @@ import styles from './Pokemon.module.css'
 
 const Pokemon = (details: TPokemon): TElement => {
    const { height, name, id, weight, images, types, abilities } = details
-   const mainImage = images[0] || ''
-   console.table(details)
+   const mainImage = images[0] ?? ''
 
    const getNavigation = () => {
       return (
