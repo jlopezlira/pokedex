@@ -17,7 +17,9 @@ export type TType = {
    url?: string
 }
 
-export type TImage = string
+export type TImage = {
+   url?: string
+}
 
 export type TPokemon = {
    id?: number
