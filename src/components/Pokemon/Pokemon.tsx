@@ -4,6 +4,7 @@ import Divider from '../Divider'
 import Image from '../Image'
 import { Link } from 'react-router-dom'
 import Pill from '../Pill'
+import Title from '../Title'
 import styles from './Pokemon.module.css'
 
 const Pokemon = (details: TPokemon): TElement => {
@@ -22,7 +23,7 @@ const Pokemon = (details: TPokemon): TElement => {
       <div className={styles.container}>
          <div className={styles.info}>
             <Image image={images} />
-            <h2 className={styles.title}>{name}</h2>
+            <Title>{name}</Title>
             <Divider />
             <Pill dark>Pokedex Number: {id}</Pill>
             <Divider />
@@ -35,7 +36,7 @@ const Pokemon = (details: TPokemon): TElement => {
             <Pill>Weight: {weight}</Pill>
          </div>
          <div className={styles.info}>
-            <h2>Types</h2>
+            <Title>Types</Title>
             <Divider />
             {types.map((type, i) => (
                <Pill dark key={i}>
@@ -44,7 +45,7 @@ const Pokemon = (details: TPokemon): TElement => {
             ))}
          </div>
          <div className={styles.info}>
-            <h2>Ability</h2>
+            <Title>Ability</Title>
             <Divider />
             {abilities.map((ability, i) => (
                <Pill dark key={i}>

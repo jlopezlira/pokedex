@@ -2,8 +2,10 @@ import { TCard, TElement } from '../../types'
 import { useEffect, useState } from 'react'
 
 import Divider from '../Divider'
+import Image from '../Image'
 import { Link } from 'react-router-dom'
 import Pill from '../Pill'
+import Title from '../Title'
 import skeleton from '../../assets/static/skeleton.gif'
 import styles from './Card.module.css'
 import useFetch from '../../hooks/useFetch'
@@ -31,14 +33,12 @@ const Card = ({ name, url }: TCard): TElement => {
             <img src={skeleton} alt="Loading" />
          ) : (
             <Link className={styles.container} to={`/pokemon/${pokedexNumber}`}>
-               <div className={styles.image}>
-                  <img src={frontDefaultImage} alt={name} />
-               </div>
+               <Image image={frontDefaultImage} />
                <Pill>
                   Pokedex Number: <strong>#{pokedexNumber}</strong>
                </Pill>
                <Divider />
-               <h2 className={styles.title}>{name}</h2>
+               <Title>{name}</Title>
                <div>
                   {type.map(({ type }: any, index: number) => (
                      <Pill dark={true} key={`${type.name} ${index}`}>
