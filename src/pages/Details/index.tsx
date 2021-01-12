@@ -35,12 +35,11 @@ const Profile = (): TElement => {
    }
 
    const handleImages = () => {
-      const newImages = []
       if (data.sprites !== undefined) {
-         Object.values(data.sprites).map((image, i) => {
-            newImages[i] = image
-         })
-         setImages(newImages)
+         const mainImage = {
+            url: data.sprites.front_default,
+         }
+         setImages(mainImage)
       }
    }
 
@@ -57,7 +56,7 @@ const Profile = (): TElement => {
       weight: data.weight,
       abilities,
       types,
-      images,
+      image,
    }
 
    return <>{isLoading ? <Loader /> : <Pokemon {...pokemon} />}</>

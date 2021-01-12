@@ -29,7 +29,7 @@ export type TPokemon = {
    weight?: number
    height?: number
    abilities?: TAbility[] | boolean
-   images?: TImage[]
+   image: TImage
    types?: TType[] | undefined
 }
 
