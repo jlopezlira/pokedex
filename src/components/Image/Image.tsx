@@ -1,11 +1,10 @@
-import { TElement, TImage } from '../../types'
-
+import { TElement } from '../../types'
 import placeHolderImage from '../../assets/static/skeleton.gif'
 import styles from './Image.module.css'
 
-const Image = ({ url }: TImage): TElement => {
-   console.log(url)
-   const imageToLoad = url === '' ? placeHolderImage : url
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const Image = ({ image }: any): TElement => {
+   const imageToLoad = image === '' ? placeHolderImage : image
 
    return (
       <div className={styles.container}>

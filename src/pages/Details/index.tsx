@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 import Loader from '../../components/Loader'
 import Pokemon from '../../components/Pokemon'
+import placeholderImage from '../../assets/static/skeleton.gif'
 import useFetch from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 
@@ -12,10 +13,10 @@ const Profile = (): TElement => {
    const { isLoading, data } = useFetch(url)
    const [abilities, setAbilities] = useState([])
    const [types, setTypes] = useState([])
-   const [images, setImages] = useState([])
+   const [images, setImages] = useState('')
 
    const handleAbilities = () => {
-      const newAbility = []
+      const newAbility: any = []
       if (data.abilities !== undefined) {
          for (let i = 0; i < data.abilities.length; i++) {
             newAbility[i] = { ...data.abilities[i].ability }
@@ -25,7 +26,7 @@ const Profile = (): TElement => {
    }
 
    const handleTypes = () => {
-      const newTypes = []
+      const newTypes: any = []
       if (data.types !== undefined) {
          for (let i = 0; i < data.types.length; i++) {
             newTypes[i] = data.types[i].type
@@ -36,9 +37,7 @@ const Profile = (): TElement => {
 
    const handleImages = () => {
       if (data.sprites !== undefined) {
-         const mainImage = {
-            url: data.sprites.front_default,
-         }
+         const mainImage: any = data.sprites.front_default ?? placeholderImage
          setImages(mainImage)
       }
    }
@@ -51,12 +50,14 @@ const Profile = (): TElement => {
 
    const pokemon: TPokemon = {
       id: data.id,
+      url: data.url,
+      experience: data.experience,
       name: data.name,
       height: data.height,
       weight: data.weight,
       abilities,
       types,
-      image,
+      images,
    }
 
    return <>{isLoading ? <Loader /> : <Pokemon {...pokemon} />}</>

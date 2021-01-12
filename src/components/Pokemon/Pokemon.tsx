@@ -4,12 +4,10 @@ import Divider from '../Divider'
 import Image from '../Image'
 import { Link } from 'react-router-dom'
 import Pill from '../Pill'
-import placeholderImage from '../../assets/static/skeleton.gif'
 import styles from './Pokemon.module.css'
 
 const Pokemon = (details: TPokemon): TElement => {
-   const { height, name, id, weight, image, types, abilities } = details
-   const mainImage = image.url || placeholderImage
+   const { height, name, id, weight, images, types, abilities } = details
    const getNavigation = () => {
       return (
          <nav>
@@ -23,7 +21,7 @@ const Pokemon = (details: TPokemon): TElement => {
    return (
       <div className={styles.container}>
          <div className={styles.info}>
-            <Image url={mainImage} />
+            <Image image={images} />
             <h2 className={styles.title}>{name}</h2>
             <Divider />
             <Pill dark>Pokedex Number: {id}</Pill>

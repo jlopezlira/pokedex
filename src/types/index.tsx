@@ -17,20 +17,18 @@ export type TType = {
    url?: string
 }
 
-export type TImage = {
-   url?: string
-}
+export type TImage = string
 
 export type TPokemon = {
    id?: number
    name: string
-   url?: string
-   experience?: number
-   weight?: number
-   height?: number
-   abilities?: TAbility[] | boolean
-   image: TImage
-   types?: TType[] | undefined
+   url: string
+   experience: number
+   weight: number
+   height: number
+   abilities: TAbility[]
+   types: TType[]
+   images: TImage
 }
 
 export type TCard = {
