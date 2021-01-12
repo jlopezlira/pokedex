@@ -9,7 +9,8 @@ import styles from './Card.module.css'
 import useFetch from '../../hooks/useFetch'
 
 const Card = ({ name, url }: TPokemon): TElement => {
-   const { isLoading, data } = useFetch(url)
+   const resource = url
+   const { isLoading, data } = useFetch(resource)
    const [type, setType] = useState([])
    const [pokedexNumber, setPokedexNumber] = useState(0)
    const [frontDefaultImage, setFrontDefaultImage] = useState('')

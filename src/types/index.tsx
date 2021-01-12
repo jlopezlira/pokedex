@@ -24,7 +24,7 @@ export type TImage = {
 export type TPokemon = {
    id?: number
    name: string
-   url?: string
+   url?: string | undefined
    experience?: number
    weight?: number
    height?: number
@@ -45,7 +45,7 @@ export type TEmpty = any | unknown
 
 export type TPokemonType = {
    name: string
-   url?: string
+   url: string
 }
 
 export type TPokemonTypes = TPokemonType[]
