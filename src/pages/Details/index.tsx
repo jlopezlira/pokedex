@@ -1,16 +1,30 @@
-import { TElement, TPokedex, TPokemon } from '../../types'
-import { useEffect, useState } from 'react'
+import { TElement, TPokedex, TPokedexContext, TPokemon } from '../../types'
+import { useContext, useEffect, useState } from 'react'
 
 import Loader from '../../components/Loader'
+import { PokedexContext } from '../../context/'
 import Pokemon from '../../components/Pokemon'
 import placeholderImage from '../../assets/static/skeleton.gif'
 import useFetch from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 
 const Profile = (): TElement => {
+   const { currentPokedex, savePokedex } = useContext(
+      PokedexContext,
+   ) as TPokedexContext
    const { pokedex }: TPokedex = useParams()
-   const url = `https://pokeapi.co/api/v2/pokemon/${pokedex}`
-   const { isLoading, data } = useFetch(url)
+
+   const handlePokedex = (): void => {
+      const pd = pokedex || currentPokedex
+      if (pokedex !== currentPokedex || currentPokedex === '') {
+         savePokedex(pd)
+      }
+   }
+
+   const { isLoading, data, updateUrl } = useFetch(
+      `https://pokeapi.co/api/v2/pokemon/${currentPokedex}`,
+   )
+
    const [abilities, setAbilities] = useState([])
    const [types, setTypes] = useState([])
    const [images, setImages] = useState('')
@@ -46,7 +60,9 @@ const Profile = (): TElement => {
       handleAbilities()
       handleTypes()
       handleImages()
-   }, [isLoading])
+      handlePokedex()
+      updateUrl(`https://pokeapi.co/api/v2/pokemon/${currentPokedex}`)
+   }, [isLoading, data, currentPokedex])
 
    const pokemon: TPokemon = {
       id: data.id,

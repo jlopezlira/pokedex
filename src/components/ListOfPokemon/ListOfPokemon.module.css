@@ -1,0 +1,25 @@
+button.prevPage,
+button.nextPage {
+   position: fixed;
+   width: auto;
+   height: 50px;
+   color: var(--color-black);
+   padding: 1.5em;
+   border: none;
+   top: 50%;
+   outline: none;
+   cursor: pointer;
+   border-radius: 25px;
+   background: var(--color-white);
+   box-shadow: 9px 9px 18px var(--color-gray), -9px -9px 18px var(--color-light);
+   transition: all 350ms ease-in-out;
+   z-index: 999;
+}
+
+button.prevPage {
+   left: 1em;
+}
+
+button.nextPage {
+   right: 1em;
+}

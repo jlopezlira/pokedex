@@ -20,7 +20,7 @@ export type TType = {
 export type TImage = string
 
 export type TPokemon = {
-   id?: number
+   id: number
    name: string
    url: string
    experience: number
@@ -53,3 +53,8 @@ export type TPokemonType = {
 }
 
 export type TPokemonTypes = TPokemonType[]
+
+export type TPokedexContext = {
+   currentPokedex: string
+   savePokedex: (query: string) => void
+}

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Divider from '../Divider'
 import Image from '../Image'
 import { Link } from 'react-router-dom'
+import Loader from '../Loader'
 import Pill from '../Pill'
 import Title from '../Title'
 import skeleton from '../../assets/static/skeleton.gif'
@@ -30,7 +31,7 @@ const Card = ({ name, url }: TCard): TElement => {
    return (
       <div className={styles.card}>
          {isLoading ? (
-            <img src={skeleton} alt="Loading" />
+            <Loader />
          ) : (
             <Link className={styles.container} to={`/pokemon/${pokedexNumber}`}>
                <Image image={frontDefaultImage} />
