@@ -51,7 +51,6 @@ const Search = (): TElement => {
          <button onClick={handleSubmit} className={styles.button}>
             {cta}
          </button>
-         {currentPokedex}
       </div>
    )
 }
