@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import Loader from '../../components/Loader'
 import { PokedexContext } from '../../context/'
 import Pokemon from '../../components/Pokemon'
+import SearchError from '../../components/SearchError'
 import placeholderImage from '../../assets/static/skeleton.gif'
 import useFetch from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
@@ -81,9 +82,7 @@ const Profile = (): TElement => {
          {isLoading ? (
             <Loader />
          ) : hasError ? (
-            <div>
-               search error on: <i>{currentPokedex}</i>
-            </div>
+            <SearchError />
          ) : (
             <Pokemon {...pokemon} />
          )}

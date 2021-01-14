@@ -1,0 +1,17 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 2em;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   overflow: hidden;
+   border-radius: 25px;
+   background: var(--color-white);
+   box-shadow: inset 2px 2px 5px var(--color-gray),
+      inset -5px -5px 10px var(--color-gray-indent);
+   margin-bottom: 1.5em;
+   padding: 1em;
+}
