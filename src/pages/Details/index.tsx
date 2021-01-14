@@ -21,7 +21,7 @@ const Profile = (): TElement => {
       }
    }
 
-   const { isLoading, data, updateUrl } = useFetch(
+   const { isLoading, data, updateUrl, hasError } = useFetch(
       `https://pokeapi.co/api/v2/pokemon/${currentPokedex}`,
    )
 
@@ -62,7 +62,7 @@ const Profile = (): TElement => {
       handleImages()
       handlePokedex()
       updateUrl(`https://pokeapi.co/api/v2/pokemon/${currentPokedex}`)
-   }, [isLoading, data, currentPokedex])
+   }, [isLoading, data, currentPokedex, pokedex])
 
    const pokemon: TPokemon = {
       id: data.id,
@@ -76,7 +76,19 @@ const Profile = (): TElement => {
       images,
    }
 
-   return <>{isLoading ? <Loader /> : <Pokemon {...pokemon} />}</>
+   return (
+      <>
+         {isLoading ? (
+            <Loader />
+         ) : hasError ? (
+            <div>
+               search error on: <i>{currentPokedex}</i>
+            </div>
+         ) : (
+            <Pokemon {...pokemon} />
+         )}
+      </>
+   )
 }
 
 export default Profile

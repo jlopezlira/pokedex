@@ -1,3 +1,4 @@
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { TCard, TElement, TPokemonList } from '../../types'
 import { useEffect, useState } from 'react'
 

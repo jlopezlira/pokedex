@@ -14,7 +14,7 @@ const Search = (): TElement => {
    const [hasError, setHasError] = useState(false)
    const [showMessage, setShowMessage] = useState(false)
    const handlerSearch = (e: any) => {
-      const queryParams = e.target.value
+      const queryParams = e.target.value.toLowerCase()
       setQuery(queryParams)
       if (queryParams.trim() !== '') {
          setHasError(false)

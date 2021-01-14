@@ -1,17 +1,21 @@
 .container {
-   display: block;
+   display: flex;
    width: 100%;
+   align-items: center;
+   justify-content: center;
    position: relative;
    overflow: hidden;
    border-radius: 25px;
    background: var(--color-white);
-   box-shadow: 9px 9px 18px var(--color-gray), -9px -9px 18px var(--color-light);
+   box-shadow: inset 2px 2px 5px var(--color-gray),
+      inset -5px -5px 10px var(--color-gray-indent);
    margin-bottom: 1.5em;
+   padding: 1em;
 }
 
 .image {
    display: block;
-   width: 100%;
+   width: auto;
    height: auto;
    top: 0;
    bottom: 0;
